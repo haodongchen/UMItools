@@ -7,8 +7,8 @@ min_reads=$3
 # the second value to one single-strand consensus, 
 # and the last value to the other single-strand consensus.
 
-samtools='/home/release/other_tools/samtools-1.9/samtools'
-sentieon='/home/release/sentieon-genomics-201911/bin/sentieon'
+samtools='/path/to/samtools-1.9/samtools'
+sentieon='/path/to/sentieon-genomics-201911/bin/sentieon'
 
 $samtools view -h $input_bam | \
 awk -v MinR=$min_reads -v OFS="\t" ' 
