@@ -1,3 +1,5 @@
+#!/bin/sh
+
 if [ "$#" -ne 3 ] ; then
   echo "Filter single UMI consensus reads by group size" >&2
   echo "Usage: $0 INPUT_BAM OUTPUT_BAM MIN_READ" >&2
