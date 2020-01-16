@@ -37,7 +37,10 @@ static void extract(struct read *r1, struct read *r2, struct read *r3)
     fwrite(r1->seqid.line, 1, r1->seqid.len, stdout);
     fputc('\t', stdout);
     fwrite("XR:Z:", 1, 5, stdout);
-    fwrite(r3->bases.line, 1, r3->bases.len, stdout);   // umi barcode
+    fwrite(r3->bases.line, 1, r3->bases.len-1, stdout);   // umi barcode
+    fputc('\t', stdout);
+    fwrite("QX:Z:", 1, 5, stdout);
+    fwrite(r3->quals.line, 1, r3->quals.len, stdout);   // umi Qual
     fwrite(r1->bases.line, 1, r1->bases.len, stdout);
     fwrite(r1->third.line, 1, r1->third.len, stdout);
     fwrite(r1->quals.line, 1, r1->quals.len, stdout);
@@ -50,7 +53,10 @@ static void extract(struct read *r1, struct read *r2, struct read *r3)
     fwrite(r2->seqid.line, 1, r2->seqid.len, stdout);
     fputc('\t', stdout);
     fwrite("XR:Z:", 1, 5, stdout);
-    fwrite(r3->bases.line, 1, r3->bases.len, stdout);   // umi barcode
+    fwrite(r3->bases.line, 1, r3->bases.len-1, stdout);   // umi barcode
+    fputc('\t', stdout);
+    fwrite("QX:Z:", 1, 5, stdout);
+    fwrite(r3->quals.line, 1, r3->quals.len, stdout);   // umi Qual
     fwrite(r2->bases.line, 1, r2->bases.len, stdout);
     fwrite(r2->third.line, 1, r2->third.len, stdout);
     fwrite(r2->quals.line, 1, r2->quals.len, stdout);
