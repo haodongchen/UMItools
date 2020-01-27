@@ -42,8 +42,9 @@ BEGIN {split(MinR,tmp,",");
       if (sum(b)>=mr1 && min(b)>=mr2 && max(b)>=mr3 ) {reads2++;print;}
       reads++;
       if (reads % 2000000 == 0) {
-          print "["strftime("Time = %m/%d/%Y %H:%M:%S", systime())"]  Processed "reads" reads.  Last read position: "$3":"$4> "/dev/stderr"}
-       }
+          print "["strftime("Time = %m/%d/%Y %H:%M:%S", systime())"]  Processed "reads" reads.  Last read position: "$3":"$4> "/dev/stderr"
+      }
+  }
 }
 END {print "["strftime("Time = %m/%d/%Y %H:%M:%S", systime())"]  Done. Processed "reads" reads.  "reads2" reads passed the filter."> "/dev/stderr" } ' | \
 $samtools view -bh - > $output_bam
