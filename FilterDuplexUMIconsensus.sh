@@ -10,10 +10,10 @@ input_bam=$1
 output_bam=$2
 min_reads=$3
 
-# min_reads has three values, e.g. 2,1,1
-# The first value is applies to the total group size,
-# the second value to one single-strand consensus, 
-# and the last value to the other single-strand consensus.
+# MIN_READS has three values, e.g. 2,1,1
+# The first value applies to the total group size;
+# the second value applies to one single-strand consensus; 
+# the last value applies to the other single-strand consensus.
 
 samtools='/path/to/samtools-1.9/samtools'
 sentieon='/path/to/sentieon-genomics-201911/bin/sentieon'
